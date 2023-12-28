@@ -13,7 +13,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.5',
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.5',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
     {
@@ -22,24 +23,29 @@ require("lazy").setup({
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate"
-    }, 
+    },
     'mbbill/undotree',
     'tpope/vim-fugitive',
-    {'williamboman/mason.nvim'},
-    {'williamboman/mason-lspconfig.nvim'},
+    { 'williamboman/mason.nvim' },
+    { 'williamboman/mason-lspconfig.nvim' },
 
-    {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
-    {'neovim/nvim-lspconfig'},
-    {'hrsh7th/cmp-nvim-lsp'},
-    {'hrsh7th/nvim-cmp'},
-    {'L3MON4D3/LuaSnip'},
+    { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
+    { 'neovim/nvim-lspconfig' },
+    { 'hrsh7th/cmp-nvim-lsp' },
+    { 'hrsh7th/nvim-cmp' },
+    { 'L3MON4D3/LuaSnip' },
+
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
 
     -- RUST PLUGINS
     {
         'saecki/crates.nvim',
         tag = 'stable',
         dependencies = { 'nvim-lua/plenary.nvim' },
-        ft = {"rust", "toml"},
+        ft = { "rust", "toml" },
         config = function()
             require('crates').setup()
         end,
@@ -48,12 +54,12 @@ require("lazy").setup({
     {
         "olexsmir/gopher.nvim",
         ft = "go",
-        build = function ()
+        build = function()
             vim.cmd [[silent! GoInstallDeps]]
         end
     },
     {
         "nvimtools/none-ls.nvim",
-        ft = {"python", "go"},
+        ft = { "python", "go" },
     }
 })
