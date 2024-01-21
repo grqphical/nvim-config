@@ -39,7 +39,7 @@ require('mason').setup({
     ensure_installed = { 'mypy', 'ruff', 'black', 'gofumpt', 'goimports-reviser', 'golines' },
 })
 require('mason-lspconfig').setup({
-    ensure_installed = { 'pyright', 'rust_analyzer', 'gopls', 'lua_ls', 'dockerfile-language-server', 'docker-compose-language-service', 'html-ls' },
+    ensure_installed = { 'pyright', 'rust_analyzer', 'gopls', 'lua_ls', 'dockerls', 'docker_compose_language_service', 'html', 'htmx' },
     handlers = {
         lsp.default_setup,
         rust_analyzer = function()
