@@ -17,9 +17,7 @@ require("lazy").setup({
         tag = '0.1.5',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
-    {
-        'navarasu/onedark.nvim',
-    },
+    { "EdenEast/nightfox.nvim" },
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate"
@@ -50,7 +48,7 @@ require("lazy").setup({
     -- GO PLUGINS
     {
         "olexsmir/gopher.nvim",
-        ft = "go",
+        ft = { "go" },
         build = function()
             vim.cmd [[silent! GoInstallDeps]]
         end

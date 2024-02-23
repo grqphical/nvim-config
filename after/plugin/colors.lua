@@ -1,6 +1,14 @@
-require('onedark').setup {
-    style = 'darker'
-}
-require('onedark').load()
+require("nightfox").setup({
+    options = {
+        transparent = true,
+    },
+    modules = {
+        "telescope",
+        "treesitter",
+        "native_lsp",
+        "lazy.nvim"
+    }
 
-vim.cmd.colorscheme("onedark")
+})
+
+vim.cmd 'colorscheme carbonfox'

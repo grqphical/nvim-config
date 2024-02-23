@@ -3,7 +3,7 @@ local lspconfig = require('lspconfig')
 local lsp_util = require "lspconfig/util"
 
 local function formatIfSupported()
-    local supported_filetypes = { 'python', 'go', 'lua', 'rust' }
+    local supported_filetypes = { 'python', 'go', 'lua', 'rust', 'asm' }
     local current_filetype = vim.bo.filetype
 
     for _, supported_type in ipairs(supported_filetypes) do
@@ -36,10 +36,10 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 require('mason').setup({
-    ensure_installed = { 'mypy', 'ruff', 'black', 'gofumpt', 'goimports-reviser', 'golines' },
+    ensure_installed = { 'mypy', 'ruff', 'black', 'gofumpt', 'goimports-reviser', 'golines', 'asmfmt' },
 })
 require('mason-lspconfig').setup({
-    ensure_installed = { 'pyright', 'rust_analyzer', 'gopls', 'lua_ls', 'dockerls', 'docker_compose_language_service', 'html', 'htmx' },
+    ensure_installed = { 'pyright', 'rust_analyzer', 'gopls', 'lua_ls', 'dockerls', 'docker_compose_language_service', 'html' },
     handlers = {
         lsp.default_setup,
         rust_analyzer = function()
