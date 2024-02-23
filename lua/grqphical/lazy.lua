@@ -34,6 +34,11 @@ require("lazy").setup({
     { 'L3MON4D3/LuaSnip' },
     { 'ThePrimeagen/vim-be-good' },
     { 'nvim-tree/nvim-web-devicons' },
+    {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" }
+    },
 
     -- RUST PLUGINS
     {

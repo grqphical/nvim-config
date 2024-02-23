@@ -6,7 +6,6 @@ require("nightfox").setup({
         "telescope",
         "treesitter",
         "native_lsp",
-        "lazy.nvim"
     }
 
 })
