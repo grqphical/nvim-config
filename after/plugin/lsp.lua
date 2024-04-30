@@ -24,7 +24,7 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
     vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
     vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-    vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+    vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
@@ -39,7 +39,7 @@ require('mason').setup({
     ensure_installed = { 'mypy', 'ruff', 'black', 'gofumpt', 'goimports-reviser', 'golines', 'asmfmt' },
 })
 require('mason-lspconfig').setup({
-    ensure_installed = { 'pyright', 'rust_analyzer', 'gopls', 'lua_ls', 'dockerls', 'docker_compose_language_service', 'html' },
+    ensure_installed = { 'pyright', 'rust_analyzer', 'gopls', 'lua_ls', 'dockerls', 'docker_compose_language_service', 'html', 'emmet_ls', 'cssls', 'sqls' },
     handlers = {
         lsp.default_setup,
         rust_analyzer = function()
